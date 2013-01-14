@@ -26,9 +26,12 @@ def collatz(n):
 	seq = []
 	i = n
 	while i != 1:
+		if cache.has_key(i):
+			return seq + cache[i]
 		seq.append(i)
 		i = next(i)
 	seq.append(1)
+	cache[n] = list(seq)
 	return seq
 
 def search(n):
@@ -37,6 +40,7 @@ def search(n):
 	for i in range(1,n+1):
 		seq = collatz(i)
 		if len(seq) > record:
+			print "New record at %d" % i
 			record_holder = seq
 			record = len(seq)
 	return record_holder
