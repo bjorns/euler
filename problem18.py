@@ -100,6 +100,6 @@ if __name__ == '__main__':
 	triangle = translate_triangle(triangle)
 
 	path = max_path(triangle)
-	print_sums(triangle)
-	## print path
-	## print "Sum: %d" % sum(path)
+	## print_sums(triangle)
+	print path
+	print "Sum: %d" % sum(path)
